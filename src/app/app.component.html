@@ -1,11 +1,4 @@
-<div>
-  <h1>ChatGPT in Angular</h1>
-  <form (ngSubmit)="getResponse()">
-    <label>
-      Input:
-      <input type="text" [(ngModel)]="inputText" name="inputText">
-    </label>
-    <button type="submit">Get Response</button>
-  </form>
-  <p>Response: {{ response }}</p>
-</div>
+
+
+<router-outlet></router-outlet>
+<app-spinner></app-spinner>

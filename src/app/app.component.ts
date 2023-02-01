@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { Model } from 'openai';
+import { Modelcadeau } from 'src/model';
+import { OpenAiService } from './open-ai.service';
+
 
 @Component({
   selector: 'app-root',
@@ -7,4 +11,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'AngularBrief';
+ modelcadeau!:String[]
+
+
+  constructor(OpenAiService:OpenAiService){
+  
+
+
+  }
 }

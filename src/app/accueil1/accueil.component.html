@@ -1,0 +1,30 @@
+<div class="container">
+    <h1>Formulaire</h1>
+
+
+   <form   class="form"  (ngSubmit)="Chercher()" [formGroup]="form">
+        <div class="inputContain">
+        <label for="nomInput">Prénom:</label>
+         <input type="text" id="nomInput"  formControlName="prenom" >
+        </div>
+        <div class="inputContain">  <label for="ageInput">Age:</label>
+        <input type="number" id="ageInput" formControlName="age">
+     </div>
+        <div class="inputContain">
+         <label for="sexeInput">Sexe:</label>
+        <input type="text" id="sexeInput" formControlName="sexe" >
+        </div>
+        <div class="inputContain">
+        <label for="Interets" >Intérêts:</label>
+        <input type="text" id="Interets" formControlName="interets">
+        </div>
+
+        <div class="buttonContain">
+            <button mat-raised-button color="primary" [class.spinner]="loading" [disabled]="loading" type="submit"  (ngSubmit)="Chercher()">Valider</button>
+        </div>
+    </form>
+</div>
+<app-spinner></app-spinner>
+<div *ngFor=" let cadeau of modelcadeau$" > 
+
+    <div > {{cadeau}}</div></div>
