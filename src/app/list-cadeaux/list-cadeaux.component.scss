@@ -1,0 +1,18 @@
+
+
+.contain{
+
+    display: flex;
+    flex-wrap: wrap;
+
+    &h2 {
+      display: flex;
+      align-content: center;
+  }
+
+    &.scroll-container {
+        
+        overflow-y: scroll;
+        scroll-behavior: smooth;
+      }
+}

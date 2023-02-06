@@ -5,13 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListCadeauxComponent } from './list-cadeaux/list-cadeaux.component';
 import { CarteCadeauxComponent } from './carte-cadeaux/carte-cadeaux.component';
-import { AccueilComponent } from './accueil1/accueil.component';
+import { AccueilComponent } from './accueil/accueil.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
-import { SpinnerComponent } from './spinner/spinner.component';
-import { LoadingInterceptor } from './loading.interceptor';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
+
 import { NgxLoadingButtonsModule } from 'ngx-loading-buttons';
+
+import { TopbarComponent } from './topbar/topbar.component';
+
+import { HttpClientModule } from '@angular/common/http';
+import { FavorisComponent } from './favoris/favoris.component';
 export const routes:Routes=[
 
   {path : 'formulaire' ,component:AccueilComponent},
@@ -24,16 +27,20 @@ export const routes:Routes=[
     ListCadeauxComponent,
     CarteCadeauxComponent,
     AccueilComponent,
-    SpinnerComponent,
+    TopbarComponent,
+    FavorisComponent,
+  
+
 
  
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule,  NgxLoadingButtonsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [{ provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true}],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

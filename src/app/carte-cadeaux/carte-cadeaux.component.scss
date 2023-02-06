@@ -1,0 +1,48 @@
+.card{     
+  display: flex;
+  flex-direction: column;
+  background: antiquewhite;
+  width: 250px;
+  height: 80%;
+  padding: 2em;
+  margin: 1em;
+  border-radius: 10px;
+    &.red{
+      background-color: #55686f;
+    }
+    &.blue{
+      background-color:rgb(163, 163, 225);
+    }
+    img {
+      width: 256px;
+    height: 256px;
+    position: relative;
+    /* left: 9.5em; */
+    bottom: 1.5em;
+    
+   }
+   
+
+    .prix{
+      display: flex;
+      height: 41px;
+      /* flex-direction: row; */
+      flex-wrap: wrap;
+      align-content: space-between;
+      justify-content: flex-end;
+    }
+    .enregistrer {
+      display: flex;
+      flex-direction: row;
+      align-content: center;
+      align-items: center;
+      justify-content: space-between;
+    
+    &button{
+   background-color: #a6d3b1;
+
+    }
+    }
+  }
+
+ 

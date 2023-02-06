@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Configuration, OpenAIApi } from 'openai';
-import { map } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { from } from 'rxjs/internal/observable/from';
 import { filter } from 'rxjs/internal/operators/filter';
 import { environment } from 'src/environments/environment';
@@ -26,7 +26,8 @@ export class OpenAiService {
     return from(this.openai.createCompletion({
       model: "text-davinci-003",
       prompt: text,
-      max_tokens: 256
+      max_tokens: 3000,
+      temperature:0.5
     })).pipe(
       filter(resp => !!resp && !!resp.data),
       map(resp => resp.data),
@@ -34,6 +35,17 @@ export class OpenAiService {
       map(data => data.choices[0].text)
     );
     
+  }
+
+   async genImageFromOpenAI(text:string) {
+
+
+   const  Response = await this.openai.createImage({
+      prompt: text,
+      n: 1,
+      size: "1024x1024",
+    });
+     return Response.data.data[0].url;
   }
 }
 

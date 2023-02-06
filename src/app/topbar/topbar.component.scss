@@ -1,0 +1,30 @@
+
+.navbar{
+
+   
+
+    & ul { 
+        display: flex;
+        list-style-type: none;
+        margin: 0;
+        padding: 10px;
+        overflow: hidden;
+        flex-wrap: wrap;
+    
+        background-color: #b84c4c;
+        justify-content: space-around;
+        height: 75px;
+        align-items: center;
+        text-decoration: dashed;
+    
+        li {
+            float: left;
+            img {
+                height: 65px;
+                width: 65px;
+                
+            }
+
+        }
+      }
+    }

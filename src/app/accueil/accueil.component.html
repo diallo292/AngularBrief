@@ -1,6 +1,6 @@
-<div class="container">
-    <h1>Formulaire</h1>
-
+<div class="container" >
+    <h1>Faites votre choix, On S'occupe du reste</h1>
+   
 
    <form   class="form"  (ngSubmit)="Chercher()" [formGroup]="form">
         <div class="inputContain">
@@ -20,11 +20,17 @@
         </div>
 
         <div class="buttonContain">
-            <button mat-raised-button color="primary" [class.spinner]="loading" [disabled]="loading" type="submit"  (ngSubmit)="Chercher()">Valider</button>
+            <button mat-raised-button color="primary" [class.spinner]="loading" [disabled]="loading" type="submit"  (ngSubmit)="Chercher()">Chercher</button>
         </div>
     </form>
 </div>
-<app-spinner></app-spinner>
-<div *ngFor=" let cadeau of modelcadeau$" > 
 
-    <div > {{cadeau}}</div></div>
+
+  <div class="favoris" ><button (click)="Favoris()">Vos cadeaux favoris</button> </div>
+  <div *ngIf="favoris;" >  <app-favoris [listeFavoris]="ListeFavoris"></app-favoris> </div>
+
+ 
+<div class="cadeauxBackground">
+    <h2>Votre Liste de Cadeaux</h2>
+    <app-list-cadeaux [listeCadeaux$]="listeCadeaux$" [loading]="loading"></app-list-cadeaux>
+</div>

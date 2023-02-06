@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AccueilComponent } from './accueil1/accueil.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { AccueilComponent } from './accueil/accueil.component';
+
 
 export const routes:Routes=[
 

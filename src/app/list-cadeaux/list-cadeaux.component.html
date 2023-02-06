@@ -1,1 +1,7 @@
-<p>list-cadeaux works!</p>
+
+
+<div  class="contain" >
+  <div *ngFor="let cadeau of listeCadeaux$" >
+    <app-carte-cadeaux  [cadeau]="cadeau" ></app-carte-cadeaux>
+  </div>
+</div>

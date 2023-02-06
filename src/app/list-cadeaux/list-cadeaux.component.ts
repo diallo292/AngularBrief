@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Modelcadeau } from 'src/model';
 
 @Component({
   selector: 'app-list-cadeaux',
@@ -7,4 +9,27 @@ import { Component } from '@angular/core';
 })
 export class ListCadeauxComponent {
 
+  
+@Input()listeCadeaux$!:Modelcadeau[]
+@Input()loading=false;
+
+images$!: Observable<string| undefined>[];
+constructor(){
+
+}
+ ngOnInit(): void {
+
+ 
+
+
+
+   
+ }
+/* getcontact(id:number){
+
+
+   this.maroute.navigateByUrl('info/'+id );
+this.contact.id=id;
+  console.log(id);
+ }*/
 }

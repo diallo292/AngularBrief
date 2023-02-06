@@ -10,7 +10,9 @@
 
     }
 }
-h1{ text-align: center;}
+h1{ text-align: center;
+color: rgb(98, 11, 11);
+}
 
 input {
     caret-color: red;
@@ -36,7 +38,6 @@ input {
     padding: 40px;
     box-sizing: border-box;
     background: #ecf0f3;
-    box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
     flex-direction: column;
     align-items: center;
   }
@@ -112,7 +113,7 @@ input {
     }
 
     input {
-        width: 80%;
+        width: 60%;
     }
 }
 
@@ -156,14 +157,23 @@ input {
   content: '';
   box-sizing: border-box;
   position: absolute;
-  top: 50%;
+  top: 70%;
   left: 50%;
-  width: 20px;
-  height: 20px;
+  width: 90px;
+  height: 90px;
   margin-top: -10px;
   margin-left: -10px;
   border-radius: 50%;
-  border: 2px solid #ffffff;
+  border: 2px solid #209641;
   border-top-color: #000000;
   animation: spinner .8s linear infinite;
+}
+
+.cadeauxBackground {
+  background-image: url('../../assets//caedeauFond.jpg');
+  background-size: contain;
+}
+.favoris {
+  display: flex;
+  justify-content: flex-end;
 }
