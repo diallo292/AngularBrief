@@ -1,2 +1,6 @@
 
-<app-list-cadeaux [listeCadeaux$]="listeFavoris"></app-list-cadeaux>
+<div  class="contain" >
+    <div *ngFor="let cadeau of listeFavoris" >
+      <app-carte-favoris  [cadeau]="cadeau" ></app-carte-favoris>
+    </div>
+  </div>

@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormControl, ReactiveFormsModule,FormGroup, Validators,FormBuilder} from '@angular/forms';
 import { generate, Observable } from 'rxjs';
 import { Modelcadeau } from 'src/model';
@@ -20,7 +20,7 @@ image!:string
   images$!: Promise<string| undefined>[];
   data!:any
   datafromJson:any
-
+@Input()tempe!:Modelcadeau[]
   FavorisFromJson!: any ;
   ListeFavoris!:Modelcadeau[]
   favoris=false
@@ -38,14 +38,7 @@ image!:string
     "img": "client1.jpg",
     "id": 17
   }
-      // httpclient.post('http://localhost:3000/list',data1).subscribe({
-      //   next: (data)=>{this. data=data},
-      // complete:()=> console.log(this.data)
-
-
-      // }
-      //   );
-      
+     
     
 
  this.form= this.fb.group({
@@ -80,7 +73,7 @@ Chercher(){
   " ans, ayant pour centre d'interets "+ interet
  +" .Le resultat en format json( nom(en minuscule), prix(en minsucule), descriptif(minuscule))" ;
 
-console.log("les donnees"+text);
+
 this.loading=true;
 this.OpenAiService.getDataFromOpenAI(text).subscribe({
 
@@ -90,15 +83,15 @@ this.OpenAiService.getDataFromOpenAI(text).subscribe({
 
 ,complete: ()=>{
   this.loading=false;
- console.log("openaidata"+this.dataFromOpenAi)
  
+ this.tempe=JSON.parse(this.dataFromOpenAi);
+ this.JsonShort(this.tempe);
+ this.listeCadeaux$=this.tempe;
 
-  this.listeCadeaux$=JSON.parse(this.dataFromOpenAi);
-  this.JsonShort(this.listeCadeaux$)
-  
   this.ImageGenerator(this.listeCadeaux$);
- console.log("datajson"+this.dataFromOpenAi)
-  this.completed=false;
+  
+   this.completed=false;
+  
 
 
 
@@ -129,9 +122,9 @@ if(!this.favoris){
     {
 
 this.ImageGenerator(this.ListeFavoris)
-//this.ListeFavoris[i].image=this.FavorisFromJson[i].image.__zone_symbol__value;
+
     }
-console.log(this.ListeFavoris)
+
 
 
    }
@@ -150,8 +143,7 @@ else {this.favoris=false}
 
   JsonShort(list:Modelcadeau[])
 {
-  list=this.FavorisFromJson.sort((a: { prix: number; },b: { prix: number; })=>{
-
+  list.sort((a: { prix: number; },b: { prix: number; })=>{
     if(a.prix<b.prix)
     return -1
     else return 1

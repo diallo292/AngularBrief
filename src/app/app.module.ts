@@ -15,6 +15,7 @@ import { TopbarComponent } from './topbar/topbar.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { FavorisComponent } from './favoris/favoris.component';
+import { CarteFavorisComponent } from './carte-favoris/carte-favoris.component';
 export const routes:Routes=[
 
   {path : 'formulaire' ,component:AccueilComponent},
@@ -29,6 +30,7 @@ export const routes:Routes=[
     AccueilComponent,
     TopbarComponent,
     FavorisComponent,
+    CarteFavorisComponent,
   
 
 

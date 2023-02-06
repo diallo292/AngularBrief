@@ -25,11 +25,5 @@ constructor(){
 
    
  }
-/* getcontact(id:number){
 
-
-   this.maroute.navigateByUrl('info/'+id );
-this.contact.id=id;
-  console.log(id);
- }*/
 }

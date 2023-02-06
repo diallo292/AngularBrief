@@ -27,10 +27,10 @@
 
 
   <div class="favoris" ><button (click)="Favoris()">Vos cadeaux favoris</button> </div>
-  <div *ngIf="favoris;" >  <app-favoris [listeFavoris]="ListeFavoris"></app-favoris> </div>
+  <div *ngIf="favoris;" class="cadeauxBackground">  <app-favoris [listeFavoris]="ListeFavoris"></app-favoris> </div>
 
  
-<div class="cadeauxBackground">
+<div class="cadeauxBackgrounds">
     <h2>Votre Liste de Cadeaux</h2>
     <app-list-cadeaux [listeCadeaux$]="listeCadeaux$" [loading]="loading"></app-list-cadeaux>
 </div>
